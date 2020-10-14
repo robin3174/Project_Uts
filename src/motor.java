@@ -16,7 +16,7 @@ public class motor extends kendaraan {
     }
 
     int hitungparkirmotor (int jamparkirmotor){
-        System.out.print("Biaya Parkir Motor Anda Adalah = (Rp2000 x " + jamparkirmotor + " Jam) = Rp." );
+        System.out.print("Biaya Parkir Motor Anda Adalah = (Rp.2000 x " + jamparkirmotor + " Jam) = Rp." );
         return(jamparkirmotor*biayamotor);
     }
 

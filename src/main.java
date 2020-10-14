@@ -8,8 +8,8 @@ public class main {
 
         Scanner datajenis = new Scanner(System.in);
 
-        System.out.println("Silahkan Masukkan Jenis Kendaraan Anda \n1.Mobil \n2.Motor");
-        System.out.print("Jenis Kendaraan Saya adalah No = ");
+        System.out.println("Silahkan Masukkan Jenis Kendaraan Anda Dalam Bentuk Nomor\n1.Mobil \n2.Motor");
+        System.out.print("Jenis Kendaraan Saya adalah Kendaraan No = ");
         int jenis = datajenis.nextInt();
 
         if (jenis == 1) {
@@ -31,7 +31,7 @@ public class main {
             System.out.println("Warna Mobil Anda Adalah        = " + a.getWarna());
             System.out.println("Jumlah Jam Parkir Anda Adalah  = " + a.getJam() + " Jam");
             System.out.println(a.hitungparkirmobil(jam));
-            System.out.println("\n\n---------------------------- Terima Kasih Telah Datang ---------------------------\n");
+            System.out.println("\n---------------------------- Terima Kasih Telah Datang ---------------------------\n");
 
         } else if (jenis == 2){
             System.out.println("\nBiaya Parkir Motor Per Jam Adalah Rp.2000");
@@ -52,7 +52,7 @@ public class main {
             System.out.println("Warna Motor Anda Adalah        = " + a.getWarna());
             System.out.println("Jumlah Jam Parkir Anda Adalah  = " + a.getJam() + " Jam");
             System.out.println(a.hitungparkirmotor(jam));
-            System.out.println("\n\n---------------------------- Terima Kasih Telah Datang ---------------------------\n");
+            System.out.println("\n---------------------------- Terima Kasih Telah Datang ---------------------------\n");
         } else {
             System.out.println("Pilihan tidak ada");
         }

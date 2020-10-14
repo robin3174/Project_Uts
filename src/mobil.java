@@ -16,7 +16,7 @@ public class mobil extends kendaraan {
     }
 
     int hitungparkirmobil (int jamparkirmobil){
-        System.out.print("Biaya Parkir Mobil Anda Adalah = (Rp4000 x " + jamparkirmobil + " Jam) = Rp." );
+        System.out.print("Biaya Parkir Mobil Anda Adalah = (Rp.4000 x " + jamparkirmobil + " Jam) = Rp." );
         return(jamparkirmobil*biayamobil);
     }
 

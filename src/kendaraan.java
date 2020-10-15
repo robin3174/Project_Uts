@@ -33,6 +33,5 @@ public abstract class kendaraan {
     /* Polymorphism */
     public int hitungParkir(int jamparkir) {
         return 0; }
-
 }
 

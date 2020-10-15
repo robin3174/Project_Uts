@@ -11,5 +11,4 @@ public class motor extends kendaraan {
     public int hitungParkir (int jamparkir){
         return (jamparkir*biayamotor);
     }
-
 }

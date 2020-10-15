@@ -9,7 +9,6 @@ public class main {
         System.out.println("Dikarenakan tempat parkir yang terbatas untuk saat ini, pelanggan diharapkan untuk melakukan proses sewa tempat parkir terlebih dahulu  \n");
 
         Scanner datajenis = new Scanner(System.in);
-        Scanner dataparkir = new Scanner(System.in);
         Scanner datamobil = new Scanner(System.in);
         Scanner datamotor = new Scanner(System.in);
 
@@ -24,7 +23,6 @@ public class main {
             System.out.print("Masukkan Jumlah Tempat Parkir Mobil yang Akan Anda Sewa = ");
             int n = datamobil.nextInt();
 
-            String jumlahmobil ;
             String platmobil ;
             String merkmobil ;
             String warnamobil ;
@@ -66,7 +64,6 @@ public class main {
             System.out.print("Masukkan Jumlah Tempat Parkir Motor yang Akan Anda Sewa = ");
             int n=datamotor.nextInt();
 
-            String jumlahmotor ;
             String platmotor ;
             String merkmotor ;
             String warnamotor ;

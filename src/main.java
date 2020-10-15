@@ -6,7 +6,7 @@ public class main {
         int hargaparkirsatuan = 0;
 
         System.out.println("\n--------------- Selamat Datang di Acara Peresmian Restoran Shangrila ---------------\n");
-        System.out.println("Dikarenakan tempat parkir yang terbatas untuk saat ini, pelanggan diharapkan untuk membuat reservasi sewa tempat parkir terlebih dahulu  \n");
+        System.out.println("Dikarenakan tempat parkir yang terbatas untuk saat ini, pelanggan diharapkan untuk melakukan proses sewa tempat parkir terlebih dahulu  \n");
 
         Scanner datajenis = new Scanner(System.in);
         Scanner dataparkir = new Scanner(System.in);
@@ -21,7 +21,7 @@ public class main {
         if (jenis == 1) {
 
             System.out.println("\nBiaya Parkir Mobil Per Jam Adalah Rp.4000");
-            System.out.print("Masukkan Jumlah Tempat Parkir yang Akan Anda Sewa = ");
+            System.out.print("Masukkan Jumlah Tempat Parkir Mobil yang Akan Anda Sewa = ");
             int n = datamobil.nextInt();
 
             String jumlahmobil ;
@@ -57,13 +57,13 @@ public class main {
             }
 
             System.out.println("\nBiaya Parkir Mobil Per Jam Adalah Rp." + hargaparkirsatuan);
-            System.out.println("Total Harga Parkir untuk " + n + " Kendaraan Anda Adalah = Rp." + totalhargajamparkir);
+            System.out.println("Total Harga Parkir untuk " + n + " Mobil Anda Adalah = Rp." + totalhargajamparkir);
             System.out.println("\n\n---------------------------- Terima Kasih Telah Datang ---------------------------");
 
         } else if (jenis == 2){
             System.out.println("\nBiaya Parkir Motor Per Jam Adalah Rp.2000");
 
-            System.out.print("Masukkan Jumlah Tempat Parkir yang Akan Anda Sewa = ");
+            System.out.print("Masukkan Jumlah Tempat Parkir Motor yang Akan Anda Sewa = ");
             int n=datamotor.nextInt();
 
             String jumlahmotor ;
@@ -99,11 +99,11 @@ public class main {
             }
 
             System.out.println("\nBiaya Parkir Motor Per Jam Adalah Rp." + hargaparkirsatuan);
-            System.out.println("Total Harga Parkir untuk " + n + " Kendaraan Anda Adalah = Rp." + totalhargajamparkir);
+            System.out.println("Total Harga Parkir untuk " + n + " Motor Anda Adalah = Rp." + totalhargajamparkir);
             System.out.println("\n\n---------------------------- Terima Kasih Telah Datang ---------------------------");
 
         } else {
-            System.out.println("\nPilihan tidak ada");
+            System.out.println("\nPilihan tidak tersedia");
         }
     }
 }

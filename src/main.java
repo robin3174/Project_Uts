@@ -28,7 +28,7 @@ public class main {
             String platmobil ;
             String merkmobil ;
             String warnamobil ;
-            int    jamparkir;
+            int jamparkir;
             a_kendaraan = new mobil[n];
 
             for (int i=0;i<n; i++) {
@@ -70,7 +70,7 @@ public class main {
             String platmotor ;
             String merkmotor ;
             String warnamotor ;
-            int    jamparkir;
+            int jamparkir;
             a_kendaraan = new motor[n];
 
             for (int i=0;i<n; i++) {

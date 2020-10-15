@@ -30,8 +30,6 @@ public abstract class kendaraan {
     /* Abstraction */
     public abstract int getBiaya();
 
-    public abstract void setBiaya(int biaya);
-
     /* Polymorphism */
     public int hitungParkir(int jamparkir) {
         return 0; }

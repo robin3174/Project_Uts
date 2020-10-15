@@ -6,9 +6,6 @@ public class motor extends kendaraan {
     }
 
     @Override
-    public void setBiaya (int biaya) { this.biayamotor=biaya;}
-
-    @Override
     public int getBiaya (){ return biayamotor; }
 
     public int hitungParkir (int jamparkir){

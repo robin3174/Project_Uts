@@ -15,7 +15,7 @@ public class main {
         System.out.println("Silahkan Masukkan Jenis Kendaraan Anda \n1.Mobil \n2.Motor");
         System.out.print("Jenis Kendaraan Anda adalah ? (1/2) = ");
         int jenis = datajenis.nextInt();
-        kendaraan a_kendaraan[];
+        kendaraan[] a_kendaraan;
 
         if (jenis == 1) {
 

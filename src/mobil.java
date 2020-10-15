@@ -5,19 +5,14 @@ public class mobil extends kendaraan {
         super(plat,merk,warna,jam);
     }
 
-    public mobil(){}
+    @Override
+    public void setBiaya (int biaya) { this.biayamobil=biaya;}
 
-    public int getBiayamobil() {
-        return biayamobil;
-    }
+    @Override
+    public int getBiaya (){ return biayamobil; }
 
-    public void setBiayamobil(int biayamobil) {
-        this.biayamobil = biayamobil;
-    }
-
-    int hitungparkirmobil (int jamparkirmobil){
-        System.out.print("Biaya Parkir Mobil Anda Adalah = (Rp.4000 x " + jamparkirmobil + " Jam) = Rp." );
-        return(jamparkirmobil*biayamobil);
+    public int hitungParkir (int jamparkir){
+        return (jamparkir*biayamobil);
     }
 
 }

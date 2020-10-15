@@ -2,59 +2,108 @@ import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
+        int totalhargajamparkir = 0;
+        int hargaparkirsatuan = 0;
 
         System.out.println("\n--------------- Selamat Datang di Acara Peresmian Restoran Shangrila ---------------\n");
         System.out.println("Dikarenakan tempat parkir yang terbatas untuk saat ini, pelanggan diharapkan untuk membuat reservasi sewa tempat parkir terlebih dahulu  \n");
 
         Scanner datajenis = new Scanner(System.in);
+        Scanner dataparkir = new Scanner(System.in);
+        Scanner datamobil = new Scanner(System.in);
+        Scanner datamotor = new Scanner(System.in);
 
-        System.out.println("Silahkan Masukkan Jenis Kendaraan Anda Dalam Bentuk Nomor\n1.Mobil \n2.Motor");
-        System.out.print("Jenis Kendaraan Saya adalah Kendaraan No = ");
+        System.out.println("Silahkan Masukkan Jenis Kendaraan Anda \n1.Mobil \n2.Motor");
+        System.out.print("Jenis Kendaraan Anda adalah ? (1/2) = ");
         int jenis = datajenis.nextInt();
+        kendaraan a_kendaraan[];
 
         if (jenis == 1) {
+
             System.out.println("\nBiaya Parkir Mobil Per Jam Adalah Rp.4000");
-            Scanner datamobil = new Scanner(System.in);
-            System.out.print("Silahkan Masukkan Plat Mobil Anda  = ");
-            String plat = datamobil.nextLine();
-            System.out.print("Silahkan Masukkan Merk Mobil Anda  = ");
-            String merk = datamobil.nextLine();
-            System.out.print("Silahkan Masukkan Warna Mobil Anda = ");
-            String warna = datamobil.nextLine();
-            System.out.print("Silahkan Masukkan Jumlah Jam Parkir yang Ingin Anda Sewa = ");
-            int jam = datamobil.nextInt();
+            System.out.print("Masukkan Jumlah Tempat Parkir yang Akan Anda Sewa = ");
+            int n = datamobil.nextInt();
 
-            mobil a = new mobil(plat,merk,warna,jam);
+            String jumlahmobil ;
+            String platmobil ;
+            String merkmobil ;
+            String warnamobil ;
+            int    jamparkir;
+            a_kendaraan = new mobil[n];
 
-            System.out.println("\nPlat Mobil Anda Adalah         = " + a.getPlat());
-            System.out.println("Merk Mobil Anda Adalah         = " + a.getMerk());
-            System.out.println("Warna Mobil Anda Adalah        = " + a.getWarna());
-            System.out.println("Jumlah Jam Parkir Anda Adalah  = " + a.getJam() + " Jam");
-            System.out.println(a.hitungparkirmobil(jam));
-            System.out.println("\n---------------------------- Terima Kasih Telah Datang ---------------------------\n");
+            for (int i=0;i<n; i++) {
+                System.out.print("\nPlat Mobil Ke-" + (i+1) + " = " );
+                platmobil  = datamobil.next();
+                System.out.print("Merk Mobil Ke-" + (i+1) + " = " );
+                merkmobil = datamobil.next();
+                System.out.print("Warna Mobil Ke-" + (i+1) + " = " );
+                warnamobil  = datamobil.next();
+                System.out.print("Jumlah Jam Parkir Mobil Ke-" + (i+1) + " = ");
+                jamparkir = Integer.parseInt(datamobil.next());
+                a_kendaraan[i] = new mobil(platmobil,merkmobil,warnamobil,jamparkir);
+            }
+
+            System.out.println("\nData Mobil yang Didaftar untuk Tempat Parkir \n(Format : Plat - Merk - Warna - Waktu Parkir - Biaya Parkir)\n");
+            for (int i=0; i<n; i++){
+                kendaraan a = a_kendaraan[i];
+                System.out.print((i+1) +". ");
+                System.out.print(a.getPlat() + " - ");
+                System.out.print(a.getMerk() + " - ");
+                System.out.print(a.getWarna() + " - ");
+                System.out.print(a.getJam() + " Jam - Rp.");
+                System.out.println(a.hitungParkir(a.getJam()));
+                totalhargajamparkir = totalhargajamparkir + a.hitungParkir(a.getJam()) ;
+                hargaparkirsatuan = a.getBiaya();
+            }
+
+            System.out.println("\nBiaya Parkir Mobil Per Jam Adalah Rp." + hargaparkirsatuan);
+            System.out.println("Total Harga Parkir untuk " + n + " Kendaraan Anda Adalah = Rp." + totalhargajamparkir);
+            System.out.println("\n\n---------------------------- Terima Kasih Telah Datang ---------------------------");
 
         } else if (jenis == 2){
             System.out.println("\nBiaya Parkir Motor Per Jam Adalah Rp.2000");
-            Scanner datamotor = new Scanner(System.in);
-            System.out.print("Silahkan Masukkan Plat Motor Anda  = ");
-            String plat = datamotor.nextLine();
-            System.out.print("Silahkan Masukkan Merk Motor Anda  = ");
-            String merk = datamotor.nextLine();
-            System.out.print("Silahkan Masukkan Warna Motor Anda = ");
-            String warna = datamotor.nextLine();
-            System.out.print("Silahkan Masukkan Jumlah Jam Parkir yang Ingin Anda Sewa = ");
-            int jam = datamotor.nextInt();
 
-            motor a = new motor(plat,merk,warna,jam);
+            System.out.print("Masukkan Jumlah Tempat Parkir yang Akan Anda Sewa = ");
+            int n=datamotor.nextInt();
 
-            System.out.println("\nPlat Motor Anda Adalah         = " + a.getPlat());
-            System.out.println("Merk Motor Anda Adalah         = " + a.getMerk());
-            System.out.println("Warna Motor Anda Adalah        = " + a.getWarna());
-            System.out.println("Jumlah Jam Parkir Anda Adalah  = " + a.getJam() + " Jam");
-            System.out.println(a.hitungparkirmotor(jam));
-            System.out.println("\n---------------------------- Terima Kasih Telah Datang ---------------------------\n");
+            String jumlahmotor ;
+            String platmotor ;
+            String merkmotor ;
+            String warnamotor ;
+            int    jamparkir;
+            a_kendaraan = new motor[n];
+
+            for (int i=0;i<n; i++) {
+                System.out.print("\nPlat Motor Ke-" + (i+1) + " = " );
+                platmotor  = datamotor.next();
+                System.out.print("Merk Motor Ke-" + (i+1) + " = " );
+                merkmotor = datamotor.next();
+                System.out.print("Warna Motor Ke-" + (i+1) + " = " );
+                warnamotor  = datamotor.next();
+                System.out.print("Jumlah Jam Parkir Motor Ke-" + (i+1) + " = ");
+                jamparkir = Integer.parseInt(datamotor.next());
+                a_kendaraan[i] = new motor(platmotor,merkmotor,warnamotor,jamparkir);
+            }
+
+            System.out.println("\nData Motor yang Didaftar untuk Tempat Parkir \n(Format : Plat - Merk - Warna - Waktu Parkir - Biaya Parkir)\n");
+            for (int i=0; i<n; i++){
+                kendaraan a = a_kendaraan[i];
+                System.out.print((i+1) +". ");
+                System.out.print(a.getPlat() + " - ");
+                System.out.print(a.getMerk() + " - ");
+                System.out.print(a.getWarna() + " - ");
+                System.out.print(a.getJam() + " Jam - Rp.");
+                System.out.println(a.hitungParkir(a.getJam()));
+                totalhargajamparkir = totalhargajamparkir + a.hitungParkir(a.getJam()) ;
+                hargaparkirsatuan = a.getBiaya();
+            }
+
+            System.out.println("\nBiaya Parkir Motor Per Jam Adalah Rp." + hargaparkirsatuan);
+            System.out.println("Total Harga Parkir untuk " + n + " Kendaraan Anda Adalah = Rp." + totalhargajamparkir);
+            System.out.println("\n\n---------------------------- Terima Kasih Telah Datang ---------------------------");
+
         } else {
-            System.out.println("Pilihan tidak ada");
+            System.out.println("\nPilihan tidak ada");
         }
     }
 }

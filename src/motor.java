@@ -5,20 +5,14 @@ public class motor extends kendaraan {
         super(plat,merk,warna,jam);
     }
 
-    public motor(){}
+    @Override
+    public void setBiaya (int biaya) { this.biayamotor=biaya;}
 
-    public int getBiayamotor() {
-        return biayamotor;
+    @Override
+    public int getBiaya (){ return biayamotor; }
+
+    public int hitungParkir (int jamparkir){
+        return (jamparkir*biayamotor);
     }
-
-    public void setBiayamotor(int biayamotor) {
-        this.biayamotor = biayamotor;
-    }
-
-    int hitungparkirmotor (int jamparkirmotor){
-        System.out.print("Biaya Parkir Motor Anda Adalah = (Rp.2000 x " + jamparkirmotor + " Jam) = Rp." );
-        return(jamparkirmotor*biayamotor);
-    }
-
 
 }
